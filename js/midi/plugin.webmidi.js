@@ -32,7 +32,6 @@
 	};
 
 	midi.noteOn = function(channel, note, velocity, delay) {
-		debugger
 		output.send([0x90 + channel, note, velocity], delay * 1000);
 	};
 
@@ -63,7 +62,6 @@
 	};
 
 	midi.onMessage = function(event) {
-		console.log('shnuur');
 		var data = event.data;
 		var channel = data[0] & 0xf;
 		var velocity = data[2];
